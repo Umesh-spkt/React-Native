@@ -35,14 +35,14 @@ export default function App() {
 
         <View style={styles.btop}>
           <Text style={{ fontSize: 20 }}>Transactions</Text>
-          <View style={{ backgroundColor: "#C0C0C0", borderRadius: 16, padding: 6 }}><Text style={{ color: "blue" }}>See All</Text></View>
+          <View style={{ backgroundColor: "#C0C0C0", borderRadius: 16, paddingHorizontal:20, paddingVertical:10, height:40 }}><Text style={{ color: "blue", textAlign:"center"}}>See All</Text></View>
         </View>
 
         <View style={styles.tranx}>
           <Transactions spent="Car Purchase" type="Auto loan" dollar="-$250" tcolor="#18BA81">car</Transactions>
-          <Transactions spent="Car Purchase" type="Auto loan" dollar="-$250" tcolor="3C46B0">house-user</Transactions>
-          <Transactions spent="Car Purchase" type="Auto loan" dollar="-$250" tcolor="#FF5758">uber</Transactions>
-          <Transactions spent="Car Purchase" type="Auto loan" dollar="-$250" tcolor="#12BABB">shopping-bag</Transactions>
+          <Transactions spent="Home Purchase" type="Auto loan" dollar="-$2250" tcolor="#3C46B0">house-user</Transactions>
+          <Transactions spent="Transport" type="Auto loan" dollar="-$250" tcolor="#FF5758">uber</Transactions>
+          <Transactions spent="Shopping" type="Auto loan" dollar="-$350" tcolor="#12BABB">shopping-bag</Transactions>
 
 
         </View>
@@ -66,7 +66,7 @@ const styles = StyleSheet.create({
     flex: 1,
     padding: 40,
     backgroundColor: '#2f36d9',
-    borderRadius: 35,
+   
     flexDirection: 'column'
   },
 
