@@ -1,2 +1,2 @@
 ### flex box
-<img src="screenshots/flex-layout.png" width="250px">
+<img src="screenshots/first-layout.png" width="250px">
