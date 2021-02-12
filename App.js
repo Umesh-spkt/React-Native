@@ -1,66 +1,109 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, TouchableWithoutFeedback, View } from 'react-native';
+import { Ionicons, FontAwesome5 } from '@expo/vector-icons';
+import { Expenses, Transactions } from './components';
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <View style ={styles.view1}>
-        <Text style={styles.text}>Chat</Text>
-      </View>
-      <View style ={styles.view2}>
-      <Text style={styles.text}>Conversation1</Text>
-      <Text style={styles.text}>Conversation2</Text>
-      <Text style={styles.text}>Conversation3</Text>
-      </View>
-      <View style ={styles.view3}>
-        <View style={styles.view0}>
-        <Text style={styles.text}>A</Text>
-        <Text style={styles.text}>B</Text>
+      <StatusBar hidden={true} />
+
+      <View style={styles.top}>
+        <View style={styles.topIcon}>
+          <Ionicons name="chevron-back" size={24} color="white" />
+          <Ionicons name="notifications-outline" size={24} color="white" />
         </View>
-      <View style={styles.view0}>
-        <Text style={styles.text}>C</Text>
-        <Text style={styles.text}>D</Text>
+
+        <View style={styles.balance}>
+          <Text style={{ color: "#C0C0C0" }}>Your Balance</Text>
+          <Text style={{ color: "#fff", fontSize: 20 }}>$547,000.00</Text>
         </View>
+
+        <View style={styles.expenses}>
+          <Expenses bcolor="#c4f2ff" iconcolor="#2f36d9" amount="$5,0000" reason="Expense" >
+            comments-dollar
+         </Expenses>
+          <Expenses bcolor="#ffe6d7" iconcolor="orange" amount="$15,000" reason="Spend to Goals">
+            funnel-dollar
+         </Expenses>
+        </View>
+
+      </View>
+
+      <View style={styles.bottom}>
+
+        <View style={styles.btop}>
+          <Text style={{ fontSize: 20 }}>Transactions</Text>
+          <View style={{ backgroundColor: "#C0C0C0", borderRadius: 16, padding: 6 }}><Text style={{ color: "blue" }}>See All</Text></View>
+        </View>
+
+        <View style={styles.tranx}>
+          <Transactions spent="Car Purchase" type="Auto loan" dollar="-$250" tcolor="#18BA81">car</Transactions>
+          <Transactions spent="Car Purchase" type="Auto loan" dollar="-$250" tcolor="3C46B0">house-user</Transactions>
+          <Transactions spent="Car Purchase" type="Auto loan" dollar="-$250" tcolor="#FF5758">uber</Transactions>
+          <Transactions spent="Car Purchase" type="Auto loan" dollar="-$250" tcolor="#12BABB">shopping-bag</Transactions>
+
+
+        </View>
+
+
+
+      </View>
     </View>
-  </View>
   );
 }
 
 const styles = StyleSheet.create({
+
   container: {
-    flex:1,
+    flex: 1,
+    backgroundColor: '#2f36d9',
+    borderRadius: 35
+
+  },
+  top: {
+    flex: 1,
+    padding: 40,
+    backgroundColor: '#2f36d9',
+    borderRadius: 35,
+    flexDirection: 'column'
+  },
+
+  bottom: {
+    flex: 1,
+    padding: 40,
     backgroundColor: '#fff',
-    flexDirection:'column',
-  },
-
-  view1:{
-    flex:1,
-    justifyContent:'center',
-    alignItems:'center',
-    backgroundColor:'#f00'
-  },
-  view2:{
-    flex:8,
-    justifyContent:'flex-end',
-    alignItems:'flex-end',
-    backgroundColor:'#0f0'
-  },
-  view3:{
-    flex:1,
-    justifyContent:'space-between',
-    backgroundColor:'#00f'
-  },
-  text:{
-    fontSize:24,
-    fontWeight:'bold',
-    color:'#fff'
+    borderRadius: 35
 
   },
-  view0:{
-    flex:1,
-    flexDirection:'row',
-    justifyContent:'space-between'
+  topIcon: {
+    flex: 1,
+    flexDirection: 'row',
+    justifyContent: 'space-between'
+
+  },
+  balance: {
+    flex: 1,
+    padding: 5,
+    marginTop: 20,
+  },
+  expenses: {
+    flex: 3,
+    padding: 5,
+    flexDirection: 'row',
+    justifyContent: "space-between",
+    marginTop: 10,
+  },
+  btop: {
+    flex: 1,
+    flexDirection: "row",
+    justifyContent: "space-between"
+  },
+  tranx: {
+
+    flex: 6,
   }
+
 
 })
