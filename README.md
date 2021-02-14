@@ -8,4 +8,4 @@
 <img src="screenshots/corrected.png" width="250px">
 
 ### Food App Layout 
-<img src="screenshots/food-app-layout.jpg" width="250px'>
+<img src="screenshots/food-app-layout.jpg" width="250px">
