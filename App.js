@@ -1,44 +1,10 @@
-import { StatusBar } from 'expo-status-bar';
-import { Ionicons } from '@expo/vector-icons';
-import React,{useState} from 'react';
-import {Image, ImageBackground, StyleSheet, Text,View,Modal } from 'react-native';
-import {Item, TopBar} from './components';
-
-
+import 'react-native-gesture-handler';
+import React, { useState } from 'react';
+import { StyleSheet, Text, View } from 'react-native';
+import MainNavigator from './navigation/MainNavigator';
 
 export default function App() {
-
-
   return (
-    <View style={styles.container}>
-      
-
-      <StatusBar hidden/>
-      <TopBar/>
-     
-    <View style={styles.body}>
-      <Item/>
-      </View>
-      
-
-      
-      
-  </View>
+    <MainNavigator />
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex:1,
-    backgroundColor: '#DEDACA',
-    flexDirection:'column',
-  },
-  body:{
-    padding:20,
-    flex:0.9
-  },
-  
-
-
- 
-})
